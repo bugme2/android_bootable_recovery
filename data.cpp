@@ -589,9 +589,10 @@ void DataManager::SetDefaultValues()
 	mConst.SetValue(TW_VERSION_VAR, TW_VERSION_STR);
 
 #ifndef TW_NO_HAPTICS
-	mPersist.SetValue("tw_button_vibrate", "80");
-	mPersist.SetValue("tw_keyboard_vibrate", "40");
-	mPersist.SetValue("tw_action_vibrate", "160");
+	mPersist.SetValue("tw_button_vibrate", "0");
+	mPersist.SetValue("tw_keyboard_vibrate", "0");
+	mPersist.SetValue("tw_action_vibrate", "0");
+	mPersist.SetValue("tw_samsung_navbar", "1");
 	mConst.SetValue("tw_disable_haptics", "0");
 #else
 	LOGINFO("TW_NO_HAPTICS := true\n");
@@ -750,17 +751,17 @@ void DataManager::SetDefaultValues()
 	mPersist.SetValue(TW_DISABLE_FREE_SPACE_VAR, "0");
 	mPersist.SetValue(TW_FORCE_DIGEST_CHECK_VAR, "0");
 	mPersist.SetValue(TW_USE_COMPRESSION_VAR, "0");
-	mPersist.SetValue(TW_TIME_ZONE_VAR, "CST6CDT,M3.2.0,M11.1.0");
+	mPersist.SetValue(TW_TIME_ZONE_VAR, "TAIST-8");
 	mPersist.SetValue(TW_GUI_SORT_ORDER, "1");
 	mPersist.SetValue(TW_RM_RF_VAR, "0");
 	mPersist.SetValue(TW_SKIP_DIGEST_CHECK_VAR, "0");
-	mPersist.SetValue(TW_SKIP_DIGEST_GENERATE_VAR, "0");
+	mPersist.SetValue(TW_SKIP_DIGEST_GENERATE_VAR, "1");
 	mPersist.SetValue(TW_SDEXT_SIZE, "0");
 	mPersist.SetValue(TW_SWAP_SIZE, "0");
 	mPersist.SetValue(TW_SDPART_FILE_SYSTEM, "ext3");
-	mPersist.SetValue(TW_TIME_ZONE_GUISEL, "CST6;CDT,M3.2.0,M11.1.0");
+	mPersist.SetValue(TW_TIME_ZONE_GUISEL, "TAIST-8;TAIDT");
 	mPersist.SetValue(TW_TIME_ZONE_GUIOFFSET, "0");
-	mPersist.SetValue(TW_TIME_ZONE_GUIDST, "1");
+	mPersist.SetValue(TW_TIME_ZONE_GUIDST, "0");
 	mData.SetValue(TW_ACTION_BUSY, "0");
 	mData.SetValue("tw_wipe_cache", "0");
 	mData.SetValue("tw_wipe_dalvik", "0");
@@ -775,10 +776,10 @@ void DataManager::SetDefaultValues()
 	mData.SetValue("tw_terminal_state", "0");
 	mData.SetValue("tw_background_thread_running", "0");
 	mData.SetValue(TW_RESTORE_FILE_DATE, "0");
-	mPersist.SetValue("tw_military_time", "0");
+	mPersist.SetValue("tw_military_time", "1");
 
 #ifdef TW_INCLUDE_CRYPTO
-	mPersist.SetValue(TW_USE_SHA2, "1");
+	mPersist.SetValue(TW_USE_SHA2, "0");
 	mPersist.SetValue(TW_NO_SHA2, "0");
 #else
 	mPersist.SetValue(TW_NO_SHA2, "1");
@@ -788,7 +789,7 @@ void DataManager::SetDefaultValues()
 	mConst.SetValue("tw_screen_timeout_secs", "0");
 	mConst.SetValue("tw_no_screen_timeout", "1");
 #else
-	mPersist.SetValue("tw_screen_timeout_secs", "60");
+	mPersist.SetValue("tw_screen_timeout_secs", "0");
 	mPersist.SetValue("tw_no_screen_timeout", "0");
 #endif
 	mData.SetValue("tw_gui_done", "0");
@@ -904,18 +905,6 @@ void DataManager::SetDefaultValues()
 
 #ifdef TW_NO_LEGACY_PROPS
 	LOGINFO("TW_NO_LEGACY_PROPS := true\n");
-#endif
-
-#ifdef TW_OEM_BUILD
-	LOGINFO("TW_OEM_BUILD := true\n");
-	mConst.SetValue("tw_oem_build", "1");
-	mConst.SetValue("tw_app_installed_in_system", "0");
-#else
-	mConst.SetValue("tw_oem_build", "0");
-	mPersist.SetValue("tw_app_prompt", "1");
-	mPersist.SetValue("tw_app_install_system", "1");
-	mData.SetValue("tw_app_install_status", "0"); // 0 = no status, 1 = not installed, 2 = already installed
-	mData.SetValue("tw_app_installed_in_system", "0");
 #endif
 
 	mData.SetValue("tw_enable_adb_backup", "0");

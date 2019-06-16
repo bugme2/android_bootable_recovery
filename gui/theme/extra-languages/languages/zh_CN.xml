@@ -12,9 +12,9 @@
 
 		<!-- Partition display names -->
 		<string name="system">System</string>
-		<string name="system_image">System 镜像</string>
+		<string name="system_image">System</string>
 		<string name="vendor">Vendor</string>
-		<string name="vendor_image">Vendor 镜像</string>
+		<string name="cust">Cust</string>
 		<string name="boot">Boot</string>
 		<string name="recovery">Recovery</string>
 		<string name="cache">Cache</string>
@@ -35,7 +35,7 @@
 		<!-- GUI XML strings -->
 		<string name="twrp_header">Team Win Recovery Project</string>
 		<string name="twrp_watch_header">TWRP %tw_version%</string>
-		<string name="cpu_temp">温度：%tw_cpu_temp% &#xB0;C</string>
+		<string name="cpu_temp">CPU：%tw_cpu_temp% &#xB0;C</string>
 		<string name="battery_pct">电量：%tw_battery%</string>
 		<string name="sort_by_name">按名称排序</string>
 		<string name="sort_by_date">按日期排序</string>
@@ -119,13 +119,6 @@
 		<string name="rebooting">正在重启…</string>
 		<string name="swipe_reboot">滑动按钮确认重启</string>
 		<string name="swipe_reboot_s">   重启</string>
-		<string name="reboot_install_app_hdr">安装 TWRP 应用？</string>
-		<string name="reboot_install_app1">您希望安装官方 TWRP 应用吗？</string>
-		<string name="reboot_install_app2">该应用可帮您检查 TWRP 的最新版本。</string>
-		<string name="reboot_install_app_prompt_install">如果 TWRP 应用未安装时提示我</string>
-		<string name="reboot_install_app_system">安装为系统应用</string>
-		<string name="reboot_installing_app">正在安装应用…</string>
-		<string name="swipe_to_install_app">滑动按钮确认安装</string>
 		<string name="swipe_flash">滑动按钮确认刷入</string>
 		<string name="confirm_action">确认操作</string>
 		<string name="back_cancel">按返回按钮取消。</string>
@@ -383,7 +376,7 @@
 		<string name="set_language_btn">设置语言</string>
 		<string name="advanced_hdr">高级选项</string>
 		<string name="copy_log_confirm">是否导出日志到内置存储？</string>
-		<string name="copying_log" version="2">正在复制…</string>
+		<string name="copying_log" version="2">导出日志</string>
 		<string name="copy_log_complete" version="2">日志导出完成</string>
 		<string name="fix_context_btn">修复 Context</string>
 		<string name="part_sd_btn">分区 SD 卡</string>
