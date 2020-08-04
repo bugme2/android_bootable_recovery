@@ -14,6 +14,7 @@
 		<string name="system">System</string>
 		<string name="system_image">System</string>
 		<string name="vendor">Vendor</string>
+		<string name="vendor_image">Vendor</string>
 		<string name="cust">Cust</string>
 		<string name="boot">Boot</string>
 		<string name="recovery">Recovery</string>
@@ -708,5 +709,12 @@
 		<string name="include_kernel_log">包含内核日志</string>
 		<string name="sha2_chk">使用 SHA2 进行散列校验</string>
 		<string name="unable_set_boot_slot">更改 bootloader 启动分区至 {1} 错误</string>
+		<string name="unmount_sys_install">在安装刷机包之前先卸载系统</string>
+		<string name="unmount_system">正在卸载系统...</string>
+		<string name="unmount_system_err">卸载系统失败</string>
+		<string name="flash_ab_inactive">将 A/B Zip 刷入到未使用的分区: {1}</string>
+		<string name="flash_ab_reboot">要刷入其他zip，请重启Recovery以切换到更新的分区。</string>
+		<string name="ozip_decrypt_decryption">开始Ozip解密...</string>
+		<string name="ozip_decrypt_finish">Ozip解密完成!</string>
 	</resources>
 </language>
