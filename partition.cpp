@@ -605,7 +605,6 @@ bool TWPartition::Process_Fstab_Line(const char *fstab_line, bool Display_Error,
 		bool mounted = Is_Mounted();
 		if (mounted || Mount(false)) {
 			// Read the backup settings file
-			DataManager::LoadPersistValues();
 			TWFunc::Fixup_Time_On_Boot("/persist/time/");
 			if (!mounted)
 				UnMount(false);
@@ -695,8 +694,12 @@ void TWPartition::Setup_Data_Partition(bool Display_Error) {
 		}
 	} else {
 		if (!Decrypt_FBE_DE()) {
-			LOGINFO("Trying wrapped key.\n");
-			property_set("fbe.data.wrappedkey", "true");
+			char wrappedvalue[PROPERTY_VALUE_MAX];
+			property_get("fbe.data.wrappedkey", wrappedvalue, "");
+			std::string wrappedkeyvalue(wrappedvalue);
+			if (wrappedkeyvalue != "true") {
+				property_set("fbe.data.wrappedkey", "true");
+			}
 		}
 	}
 	if (datamedia && (!Is_Encrypted || (Is_Encrypted && Is_Decrypted))) {
